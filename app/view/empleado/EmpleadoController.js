@@ -69,16 +69,28 @@ Ext.define('MiAppSencha.view.empleado.EmpleadoController',{
         Ext.Msg.confirm("Eliminar empleado","¿Seguro que desea eliminar este empleado?",function(respuesta){
             if(respuesta == "yes"){
                 Ext.Ajax.request({
-                    url: Ext.manifest.url_backend + 'empleados/' + empleado.id,
-                    method: 'DELETE',
-
+                    url: Ext.manifest.url_backend + 'telefonos?empleado=' + empleado.id,
                     success: function(response, opts){
-                        Ext.Msg.alert("Ok","Empleado eliminado correctamente", function(){
-                            Ext.getStore('empleados-listado').reload();
-                        })
+                        var telefonos = Ext.decode(response.responseText)
+                        if(telefonos.length > 0){
+                            Ext.Msg.alert('No Permitido','No se puede eliminar empleado con telefonos asociados')
+                        }else{
+                            Ext.Ajax.request({
+                                url: Ext.manifest.url_backend + 'empleados/' + empleado.id,
+                                method: 'DELETE',
+                                success: function(response, opts){
+                                    Ext.Msg.alert("Ok","Empleado eliminado correctamente", function(){
+                                        Ext.getStore('empleados-listado').reload();
+                                    })
+                                },
+                                failure: function(response, opts){
+                                    console.log('El servidor falló con el código ' + response.status);
+                                }
+                            })
+                        }     
                     },
-                    failure: function(response, opts){
-                        console.log('El servidor falló con el código ' + response.status);
+                    failure: function(response,opts){
+                        console.log('El servido fallo con el codigo ' + response.status);
                     }
                 })
             }

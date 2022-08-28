@@ -2,6 +2,8 @@ Ext.define('MiAppSencha.view.empresa.VentanaEmpresa',{
     extend: 'MiAppSencha.view.FormBase',
     controller: 'empresa',
 
+    scrollable: true,
+
     title: 'Agregar Empresa',
     
 

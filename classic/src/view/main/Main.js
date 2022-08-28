@@ -86,6 +86,16 @@ Ext.define('MiAppSencha.view.main.Main', {
             xtype: 'empleado'
         },
         {
+            title: 'Teléfonos',
+            iconCls: 'fa-phone',
+            xtype: 'telefono'
+        },
+        {
+            title: 'Usuarios',
+            iconCls: 'fa-user-circle',
+            xtype: 'usuario'
+        },
+        {
         title: 'Home',
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!

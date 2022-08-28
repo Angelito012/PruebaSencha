@@ -1,10 +1,9 @@
-Ext.define('MiAppSencha.view.empleado.VentanaEmpleado',{
+Ext.define('MiAppSencha.view.telefono.VentanaTelefono',{
     extend: 'MiAppSencha.view.FormBase',
-    title: 'Agregar Empleado',
-    controller: 'empleado',
+    title: 'Agregar Telefono',
+    controller: 'telefono',
 
     scrollable: true,
-
 
     items:[
         {
@@ -29,29 +28,24 @@ Ext.define('MiAppSencha.view.empleado.VentanaEmpleado',{
                     allowBlank: true,
                 },
                 {
-                    fieldLabel: 'Nombre',
-                    name: 'nombre',
-                    itemId: 'nombre'
+                    fieldLabel: 'Tipo',
+                    name: 'tipo',
+                    itemId: 'tipo'
                 },
                 {
-                    fieldLabel: 'Apellido',
-                    name: 'apellido',
-                    itemId: 'apellido'
+                    fieldLabel: 'Pais',
+                    name: 'pais',
+                    itemId: 'pais'
                 },
                 {
-                    fieldLabel: 'Email',
-                    name: 'email',
-                    itemId: 'email'
+                    fieldLabel: 'Numero',
+                    name: 'numero',
+                    itemId: 'numero'
                 },
                 {
-                    fieldLabel: 'Direccion',
-                    name: 'direccion',
-                    itemId: 'direccion'
-                },
-                {
-                    xtype: 'comboempresas',
-                    name: 'empresa',
-                    itemId: 'empresa',
+                    xtype: 'comboempleados',
+                    name: 'empleado',
+                    itemId: 'empleado',
                     editable: false
                 }
 

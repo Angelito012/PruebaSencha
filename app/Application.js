@@ -14,10 +14,10 @@ Ext.define('MiAppSencha.Application', {
         }
     },
     // launch: function(){
-    //     var login = Ext.create('MiAppSencha.view.usuario.Usuario');
+      //   var login = Ext.create('MiAppSencha.view.usuario.Usuario');
 
-    //     login.show();
-    // },
+        // login.show();
+     //},
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
             function (choice) {
